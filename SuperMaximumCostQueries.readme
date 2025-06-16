@@ -1,0 +1,32 @@
+Super Maximum Cost Queries
+------------------------------
+Problem Description
+Process queries on tree structures using Union-Find with cost-based operations.
+Solution Overview
+Uses Union-Find data structure with path compression and union by rank for efficient tree operations.
+Data Structure Used
+
+Union-Find: Disjoint set with path compression
+TreeMap: Sorted cost mapping
+Binary Search: Efficient range queries
+
+Why This Data Structure is Efficient
+
+Path Compression: Nearly O(1) find operations
+Union by Rank: Balanced tree structure
+Sorted Processing: Cost-based ordering
+Range Queries: Efficient interval processing
+
+Algorithm Approach
+
+Sort edges by cost
+Process edges using Union-Find
+Maintain cumulative cost information
+Answer queries using binary search on costs
+
+Time Complexity
+
+Union-Find Operations: O(α(n)) - Inverse Ackermann
+Sorting: O(m log m) - m edges
+Query Processing: O(log m) per query
+Space Complexity: O(n + m) - Nodes and edges
