@@ -1,0 +1,32 @@
+AND XOR OR
+------------
+Problem Description
+Find maximum value of ((a&b)^(a|b))&(a^b) for all possible pairs in array using stack-based approach.
+Solution Overview
+Uses a custom stack to maintain elements and computes the expression for valid pairs.
+Data Structure Used
+
+Custom Stack: Array-based stack implementation
+Array: Input data storage
+
+Why This Data Structure is Efficient
+
+Stack Properties: LIFO for pair processing
+Custom Implementation: Tailored operations
+Efficient Computation: Avoids redundant calculations
+Memory Management: Controlled stack operations
+
+Algorithm Approach
+
+Use stack to maintain potential pairs
+For each element, compute expression with stack top
+Maintain maximum value found
+Handle stack operations based on element comparisons
+
+Time Complexity
+
+Time Complexity: O(n) - Each element processed once
+Space Complexity: O(n) - Stack storage
+
+Mathematical Foundation
+Expression ((a&b)^(a|b))&(a^b) combines bitwise operations for specific value extraction.
