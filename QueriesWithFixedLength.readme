@@ -1,0 +1,29 @@
+Queries with Fixed Length
+--------------------------
+Problem Description
+For each query, find the minimum of maximum values in all subarrays of given length.
+Solution Overview
+Uses sliding window maximum with deque for efficient window management.
+Data Structure Used
+
+Deque: Maintains potential maximum candidates
+Sliding Window: Fixed-size window processing
+
+Why This Data Structure is Efficient
+
+O(1) Window Updates: Constant time window sliding
+Deque Properties: Efficient front/back operations
+Monotonic Queue: Maintains useful elements only
+Minimum Tracking: Finds minimum of maximums
+
+Algorithm Approach
+
+Use deque to maintain maximum candidates for current window
+For each window position, store maximum value
+Find minimum among all window maximums
+
+Time Complexity
+
+Window Processing: O(n) - Each element processed once
+Query Processing: O(n) per query
+Space Complexity: O(n) - Deque and result storage
