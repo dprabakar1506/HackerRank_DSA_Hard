@@ -1,0 +1,31 @@
+Truck Tour
+Problem Description
+Find starting petrol pump for circular tour where truck can complete the circuit.
+Solution Overview
+Uses queue-based simulation to find valid starting point for circular tour.
+Data Structure Used
+
+Queue: Circular processing of petrol pumps
+Greedy Approach: Optimal starting point selection
+
+Why This Data Structure is Efficient
+
+Circular Processing: Queue naturally handles circular structure
+Single Pass: O(n) time complexity
+Greedy Strategy: Optimal starting point identification
+Space Efficient: Minimal additional storage
+
+Algorithm Approach
+
+Try each starting position
+Simulate tour keeping track of fuel
+If insufficient fuel, update starting position
+Continue until valid start found
+
+Time Complexity
+
+Time Complexity: O(n) - Each pump visited at most twice
+Space Complexity: O(n) - Queue storage
+
+Mathematical Foundation
+If solution exists, greedy approach guarantees finding it in single pass by eliminating invalid starting positions.
