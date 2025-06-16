@@ -1,0 +1,33 @@
+Array Manipulation
+Problem Description
+Efficiently handle range updates on an array and find the maximum value after all operations.
+Solution Overview
+Uses difference array technique to handle range updates in O(1) time, then computes final values.
+Data Structure Used
+
+Difference Array: Stores range update deltas
+Prefix Sum: Reconstructs final array values
+
+Why This Data Structure is Efficient
+
+O(1) Updates: Constant time range updates
+Lazy Evaluation: Defers computation until needed
+Memory Efficient: Single array for all operations
+Scalable: Handles large number of updates
+
+Algorithm Approach
+
+For each update [a,b,k]: add k at position a, subtract k at position b+1
+Compute prefix sum to get final values
+Track maximum value during prefix sum computation
+
+Time Complexity
+
+Update Processing: O(m) - m updates
+Value Computation: O(n) - n array elements
+Total: O(n + m)
+Space Complexity: O(n) - Difference array
+
+Mathematical Foundation
+Difference array: diff[i] = arr[i] - arr[i-1]
+Prefix sum reconstruction: arr[i] = arr[i-1] + diff[i]
