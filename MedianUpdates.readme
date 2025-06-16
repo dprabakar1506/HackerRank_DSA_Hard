@@ -1,0 +1,33 @@
+Median Updates
+Problem Description
+Maintain running median with add/remove operations on a dynamic dataset.
+Solution Overview
+Uses sorted list with binary search for efficient insertions and deletions.
+Data Structure Used
+
+ArrayList: Sorted list of numbers
+Binary Search: Efficient insertion point finding
+
+Why This Data Structure is Efficient
+
+Sorted Maintenance: Always keeps data sorted
+Binary Search: O(log n) position finding
+Median Access: Direct access to middle elements
+Dynamic Updates: Supports add/remove operations
+
+Algorithm Approach
+
+Use binary search to find insertion/deletion point
+Maintain sorted order after each operation
+Calculate median based on list size (odd/even)
+
+Time Complexity
+
+Add/Remove: O(n) - Insertion/deletion in sorted list
+Median Calculation: O(1) - Direct access
+Space Complexity: O(n) - Data storage
+
+Median Calculation
+
+Odd size: Middle element
+Even size: Average of two middle elements
