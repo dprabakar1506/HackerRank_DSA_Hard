@@ -1,0 +1,39 @@
+Poisonous Plants
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+------------------------
+Plants in a line die daily if they have more pesticide than the plant to their left. 
+Find how many days until no more plants die (array becomes non-decreasing).
+
+Solution Overview
+---------------------
+Use stack to track when each plant dies without day-by-day simulation. Process plants right-to-left, calculating death days based on plants that can kill them.
+
+Data Structures Used
+-----------------------
+Stack: Stores (pesticide_value, death_day) pairs
+Monotonic Stack: Maintains decreasing pesticide order
+Reverse Traversal: Process from right to left for efficiency
+
+Why These Data Structures are Efficient
+---------------------------------------------
+Stack Operations: O(1) push/pop for plant processing
+Single Pass: Each plant pushed and popped at most once
+Avoids Simulation: Calculates final result without day-by-day steps
+
+Algorithm Approach
+------------------------
+Process plants from right to left
+For each plant:
+
+Pop weaker plants from stack (those it can kill)
+Calculate when current plant dies based on remaining stack
+Track maximum death day
+Push current plant to stack
+
+Return maximum death day encountered
+
+Time Complexity
+-----------------------
+Time Complexity: O(N) - Each plant processed once
+Space Complexity: O(N) - Stack storage
