@@ -1,0 +1,42 @@
+Kundu and Tree
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+-------------------------
+Given a tree with edges colored red or black, 
+count triplets of nodes where every path between any two nodes in the triplet contains at least one red edge.
+
+Solution Overview
+--------------------
+Use Union-Find to group nodes connected by black edges into components. 
+Count valid triplets by subtracting invalid combinations (nodes connected by black-only paths) from total possible triplets.
+
+Data Structures Used
+------------------------
+Disjoint Set Union (DSU): Groups nodes connected by black edges
+Path Compression: Optimizes find operations
+Union by Size: Balances merge operations
+HashSet: Stores unique component roots
+
+Why These Data Structures are Efficient
+-------------------------------------------
+DSU Operations: Near O(1) with path compression and union by size
+Component Grouping: Efficiently identifies connected regions
+Combinatorial Counting: Mathematical approach avoids explicit enumeration
+
+Algorithm Approach
+--------------------
+Initialize DSU, process edges (ignore red, union black)
+Count invalid triplets:
+
+All 3 nodes in same component: summation (C(size,3))
+2 nodes in same component: summation (C(size,2) × (n-size))
+
+
+Valid triplets = Total C(n,3) - Invalid triplets
+
+Time Complexity
+---------------------
+Time Complexity: O(N × α(N)) - Where α is inverse Ackermann
+
+
+Space Complexity: O(N) - DSU arrays
