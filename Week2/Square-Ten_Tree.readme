@@ -1,0 +1,35 @@
+Square-Ten Tree
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+-----------------------
+Represent range [L, R] as a Square-Ten Tree where each level has segments of specific digit lengths following a pattern. 
+Output level-count pairs for the tree representation.
+
+Solution Overview
+--------------------------
+Use custom BigInteger class for large numbers and two-phase algorithm: process increasing segment sizes from L, then decreasing segment sizes to R.
+
+Data Structures Used
+----------------------------
+Custom BigInteger: Handles arbitrary precision arithmetic
+Byte Array: Stores large numbers efficiently
+String Segmentation: Extracts digit segments for each level
+Level-based Processing: Organizes tree by predefined patterns
+
+Why These Data Structures are Efficient
+-------------------------------------------
+Arbitrary Precision: Handles numbers beyond standard limits
+Memory Efficient: Byte arrays for large number storage
+Segmented Processing: Avoids full number manipulation per operation
+
+Algorithm Approach
+-------------------------
+Preprocessing: Convert L to L-1, calculate segment sizes per level
+Phase 1: Process increasing segments from L-1 to intermediate bound
+Phase 2: Process decreasing segments from intermediate to R
+Output: Combine both phases for complete tree representation
+
+Time Complexity
+-----------------------------
+Time Complexity: O(D × L) - D digits, L levels
+Space Complexity: O(D) - BigInteger storage
