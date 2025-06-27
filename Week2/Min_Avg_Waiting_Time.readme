@@ -1,0 +1,39 @@
+Minimum Average Waiting Time
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+A chef receives orders with arrival times and cooking durations. 
+Minimize average waiting time by determining optimal order processing strategy.
+
+Solution Overview
+-------------------
+Use greedy algorithm with priority queue: always cook the shortest available order first. 
+Combines chronological processing with shortest-job-first scheduling.
+
+Data Structures Used
+------------------------
+Priority Queue (Min-Heap): Orders available orders by cooking time
+Sorting: Process orders chronologically by arrival time
+Greedy Selection: Always choose shortest cooking time among available orders
+
+Why These Data Structures are Efficient
+--------------------------------------------
+Min-Heap: O(log N) for optimal order selection
+Shortest Job First: Mathematically proven to minimize average waiting time
+Event-Driven: Only considers orders when they arrive
+
+Algorithm Approach
+--------------------------
+Sort customers by arrival time
+For each time point:
+
+Add all newly arrived orders to priority queue
+If queue empty, advance to next arrival
+Process shortest available order
+Update current time and total waiting time
+
+Calculate average waiting time
+
+Time Complexity
+--------------------
+Time Complexity: O(N log N) - Sorting + heap operations
+Space Complexity: O(N) - Priority queue storage
