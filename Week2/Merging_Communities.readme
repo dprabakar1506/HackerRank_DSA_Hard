@@ -1,0 +1,39 @@
+Merging Communities
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+---------------------
+Handle dynamic community operations: M i j (merge person i and j into same community) and Q i (query size of person i's community).
+
+Solution Overview
+----------------------
+Use arrays to track community membership and sizes. Implement union-by-size optimization to minimize reassignment operations during merges.
+
+Data Structures Used
+--------------------------
+Community Array: Maps each person to community ID
+Count Array: Stores size of each community
+Union by Size: Merges smaller into larger communities
+Sequential IDs: Assigns unique IDs to new communities
+
+Why These Data Structures are Efficient
+--------------------------------------------
+Direct Access: O(1) lookup for community membership and size
+Union by Size: Minimizes expensive reassignment operations
+Lazy Creation: Communities created only when needed
+
+Algorithm Approach
+--------------------------
+Query (Q i): Return community size or 1 if no community
+Merge (M i j):
+
+Same community → No action
+Different communities → Merge smaller into larger
+No communities → Create new community for both
+One community → Add other person to existing
+
+Time Complexity
+----------------------------
+Query: O(1) - Direct array access
+Merge: O(N) worst case - Full array scan for reassignment
+
+Space Complexity: O(N) - Two arrays
