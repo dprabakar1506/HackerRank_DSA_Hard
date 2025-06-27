@@ -1,0 +1,38 @@
+Jenny's Subtrees
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Problem Description
+------------------------
+Given a tree with n nodes and radius r, count distinct subtree structures within radius r from each node. Two subtrees are identical if they have the same structural pattern regardless of node labels.
+
+Solution Overview
+---------------------
+Extract radius-r subtrees from each node, find their centroids, generate canonical string representations, and count unique structures using hash comparison.
+
+Data Structures Used
+---------------------
+Adjacency List: Tree representation for efficient traversal
+BFS Queue: Extract nodes within radius constraint
+HashSet: Track unique subtree structures and avoid recomputation
+HashMap: Store subgraph connections
+
+Why These Data Structures are Efficient
+---------------------------------------------
+BFS: Guarantees exact radius constraint in O(nodes + edges)
+Canonical Hashing: Structure-only comparison ignoring node values
+Centroid-based: Unique representation for each tree structure
+Hash Deduplication: O(1) uniqueness checking
+
+Algorithm Approach
+-------------------------
+1. Build tree from edge list using adjacency list
+2. For each node:
+   * BFS to extract all nodes within radius r
+   * Find centroid(s) of extracted subtree
+   * Generate canonical hash from centroid
+   * Add hash to unique structures set
+3. Return count of unique hashes
+
+Time Complexity
+--------------------
+Time Complexity: O(N²) - BFS and centroid finding for each node
+Space Complexity: O(N) - Tree storage and temporary structures
